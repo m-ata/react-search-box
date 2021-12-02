@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import { ExampleComponent } from 'react-search-box'
-import 'react-search-box/dist/index.css'
+import 'react-search-box/dist/index.css';
+import SearchBox from './SearchBox';
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+
+  const [text, setText] = useState('');
+
+  return <div className={'container'}>
+    <SearchBox text={text} handleTextChange={(e) => setText(e.target.value)} />
+  </div>
 }
 
 export default App
